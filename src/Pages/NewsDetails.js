@@ -4,6 +4,7 @@ import { useParams} from 'react-router-dom';
 import axios from 'axios';
 import Comment from '../Components/Comment';
 import LoginPage from '../Components/Login';
+import jwtDecode from 'jwt-decode';
 
 const NewsDetails = () => {
     const id = useParams(); 
@@ -37,7 +38,7 @@ const NewsDetails = () => {
                 e.preventDefault();
                 let content = document.querySelector('input').value;
                 const storedComments = JSON.parse(localStorage.getItem('comment')) || [];
-                const user = JSON.parse(localStorage.getItem('token'))
+                const user = jwtDecode(localStorage.getItem('token'))
                 // Ajoute le nouveau commentaire au tableau existant
                 storedComments.push({'content' : content, 'id' : `${id.slug}`, 'user_name' : `${user.username}`});
 
@@ -57,7 +58,7 @@ const NewsDetails = () => {
         <div>
         <h3>Espace commentaires : </h3>
 
-        {Storage.map((stored_comment, index) => (
+        {Storage.filter(stored_comment => stored_comment.id === id.slug).map((stored_comment, index) => (
             <div key={index}>
                 {/* Affiche le contenu du commentaire */}
                 <Comment user_name={stored_comment.user_name} content={stored_comment.content} />

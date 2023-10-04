@@ -43,7 +43,7 @@ const News = () => {
             </div>
             ) : (
                 <>
-                <div className='grid-3 justify-content-center container'>
+                <div className='grid-3 justify-content-center container mt-5'>
                 {news.map((elt)=>(
                    
                     <div>

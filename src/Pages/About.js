@@ -6,9 +6,10 @@ import { Link, Outlet } from 'react-router-dom';
 const About = () => {
     return (
         <div>
+            
             <Header title='About' description='Page About, quel beau Header' url={url}/>
 
-
+            <div className='container mt-3'>
             <p>Découvrez nos informations et apprenez à nous connaitre, prenez quelque secondes pour ouvrir nos tabs</p>
             <div className='tabs'>
                 <h3>Nous connaitre</h3>
@@ -26,6 +27,7 @@ const About = () => {
                 </ul>
                 <Outlet/>
             </div>
+        </div>
         </div>
     );
 };

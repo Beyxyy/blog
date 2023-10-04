@@ -29,7 +29,7 @@ h1{
 }
 
 
-.bg-menu::after{
+/* .bg-menu::after{
     content : '';
     position : absolute;
     background-color: rgb(0, 106, 255);
@@ -39,7 +39,7 @@ h1{
     border-radius : 25px;
     transform : translate(-50%, -50%);
     width : 450px;
-}
+} */
 
 
 ul{
@@ -75,8 +75,8 @@ li{
 li:hover{
     
 }
-a{
-    text-decoration: none;
+.no_underline a{
+    text-decoration: none !important;
     color : rgb(0, 191, 255)
 }
 a:hover{
@@ -113,33 +113,47 @@ p{
     align-items: center;
 }
 
+.bg_white{
+    background-color : rgba(360, 360, 360, 0.2);
+    width: fit-content;
+    margin : auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+}
 
 .banner{
     height : 20vh;
     background-size : cover;
+    align-items : center;
+    display:flex;
+    text-align: center;
 }
 @media screen and (max-width : 428px) {
     ul{
         flex-direction: column;
     
     }
-    img{
-        display: none;
-    }
+    .d-flex img{
+        display: none !important;
+    }   
 }
 
 .tabs ul li a{
     color : rgb(0, 191, 255);
+    text-decoration: none !important;
 }
 .tabs ul li{
     color: rgb(255, 0, 166);
-    border-bottom: solid 4px rgb(0, 191, 255);
-    border-right: solid 4px rgb(0, 191, 255);
+    
+    border: solid 2px rgb(0, 191, 255);
     padding : 10px;
     margin : 20px;
     border-radius : 20px;
 }
 
 .tabs li:hover{
-    border : none;
+   text-decoration: underline;
+   color : rgb(0, 191, 255);
 }
